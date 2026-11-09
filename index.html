@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fale com o Farmacêutico — conceito</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root{--ink:#1C2321;--muted:#5B6661;--teal:#0F766E;--teal-d:#0B5B55;--teal-s:#E6F2F0;--line:#E4E8E6;--field:#CDD5D2;--soft:#F2F4F3}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#EEF1F0}
+  header{max-width:1240px;margin:0 auto;padding:40px 16px 8px}
+  header h1{margin:0 0 8px;font-size:clamp(26px,4vw,38px)}
+  header p{margin:0;color:var(--muted);max-width:720px;line-height:1.5}
+  .screens{max-width:1240px;margin:0 auto;padding:24px 16px 56px;display:flex;flex-wrap:wrap;gap:32px;justify-content:center}
+  figure{margin:0;display:flex;flex-direction:column;gap:12px}
+  figcaption{font-weight:600;font-size:14px;color:var(--muted)}
+  .phone{width:390px;max-width:calc(100vw - 32px);height:844px;background:#fff;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+  .top{display:flex;align-items:center;gap:12px;padding:20px 16px 12px}
+  .icon-btn{width:44px;height:44px;border:none;border-radius:22px;background:var(--soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer}
+  .title{font-size:17px;font-weight:700}
+  .sub{font-size:13px;color:var(--muted)}
+  .btn{height:48px;border:none;border-radius:12px;background:var(--teal);color:#fff;font:inherit;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer}
+  .btn:hover{background:var(--teal-d)}
+  input[type=text]{height:44px;padding:0 14px;border:1px solid var(--field);border-radius:12px;font:inherit;font-size:15px;color:var(--ink)}
+  .chip{padding:8px 14px;border-radius:20px;background:var(--soft);font-size:13px;font-weight:500;white-space:nowrap}
+  .chip.on{background:var(--ink);color:#fff;font-weight:600}
+  .prod{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .thumb{width:72px;height:72px;border-radius:12px;background:var(--soft);flex-shrink:0}
+  .ask{align-self:center;min-height:44px;padding:0 10px;border-radius:10px;border:1px solid #B9D9D4;font-size:12px;font-weight:600;color:var(--teal);display:flex;align-items:center;text-decoration:none}
+  .topic{min-height:48px;padding:0 14px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;font:inherit;font-size:15px;text-align:left;cursor:pointer;color:var(--ink);border:1px solid var(--field);background:#fff;font-weight:500}
+  .topic[aria-pressed=true]{border:2px solid var(--teal);background:var(--teal-s);font-weight:600}
+  .topic svg{visibility:hidden}.topic[aria-pressed=true] svg{visibility:visible}
+  .bubble{max-width:300px;padding:12px 14px;font-size:15px;line-height:1.45}
+  .me{align-self:flex-end;max-width:280px;border-radius:16px 16px 4px 16px;background:var(--teal);color:#fff}
+  .them{align-self:flex-start;border-radius:16px 16px 16px 4px;background:#fff}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 40px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Fale com o Farmacêutico</h1>
+  <p>Conceito de funcionalidade para farmácias em apps de delivery: um canal para o cliente tirar dúvidas com o farmacêutico responsável da loja antes de comprar. Protótipo de interface — não é um produto oficial.</p>
+</header>
+
+<main class="screens">
+  <figure id="loja">
+    <figcaption>1 · Loja da farmácia</figcaption>
+    <div class="phone">
+      <div class="top">
+        <button class="icon-btn" aria-label="Voltar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C2321" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div><div class="title">Farmácia Bem Viver</div><div class="sub">Aberta agora · Entrega e retirada</div></div>
+      </div>
+      <div style="padding:0 16px 12px">
+        <label style="display:flex;align-items:center;gap:8px;height:44px;padding:0 14px;border-radius:12px;background:var(--soft)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B6661" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <span class="sr" style="position:absolute;left:-9999px">Buscar</span>
+          <input type="search" placeholder="Buscar na farmácia" style="border:none;background:transparent;font:inherit;font-size:15px;flex:1;outline:none">
+        </label>
+      </div>
+      <div style="margin:4px 16px 16px;padding:16px;border-radius:16px;background:var(--teal-s);display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:12px">
+          <div style="width:44px;height:44px;border-radius:22px;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M12 8.5v7M8.5 12h7"/></svg>
+          </div>
+          <div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Dúvida sobre um remédio?</div><div style="font-size:14px;line-height:1.4;color:#2E3A36">Converse com o farmacêutico responsável desta loja antes de comprar. Sem custo.</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--teal-d);font-weight:600"><span style="width:8px;height:8px;border-radius:4px;background:#15803D"></span>Farmacêutico disponível agora</div>
+        <a class="btn" href="#triagem">Falar com o farmacêutico</a>
+      </div>
+      <div style="display:flex;gap:8px;padding:0 16px 16px;overflow:hidden"><span class="chip on">Dor e febre</span><span class="chip">Vitaminas</span><span class="chip">Dermocosméticos</span><span class="chip">Infantil</span></div>
+      <div style="padding:0 16px;flex:1">
+        <div class="prod"><div class="thumb"></div><div style="flex:1;display:flex;flex-direction:column;gap:4px"><b style="font-size:15px">Dipirona 500 mg</b><span class="sub">10 comprimidos</span><b>R$ [PREÇO]</b></div><a class="ask" href="#triagem">Tirar dúvida</a></div>
+        <div class="prod"><div class="thumb"></div><div style="flex:1;display:flex;flex-direction:column;gap:4px"><b style="font-size:15px">Paracetamol 750 mg</b><span class="sub">20 comprimidos</span><b>R$ [PREÇO]</b></div><a class="ask" href="#triagem">Tirar dúvida</a></div>
+        <div class="prod" style="border:none"><div class="thumb"></div><div style="flex:1;display:flex;flex-direction:column;gap:4px"><b style="font-size:15px">Ibuprofeno 400 mg</b><span class="sub">10 cápsulas</span><b>R$ [PREÇO]</b></div><a class="ask" href="#triagem">Tirar dúvida</a></div>
+      </div>
+      <a class="btn" href="#triagem" style="position:absolute;right:16px;bottom:92px;height:52px;padding:0 18px;border-radius:26px;gap:8px;font-size:14px;box-shadow:0 6px 16px rgba(15,118,110,.3)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Farmacêutico</a>
+      <div style="display:flex;justify-content:space-between;align-items:center;height:72px;padding:0 16px;border-top:1px solid var(--line)">
+        <span class="sub" style="font-size:14px">2 itens na sacola</span>
+        <button class="btn" style="background:var(--ink);padding:0 24px">Ver sacola</button>
+      </div>
+    </div>
+  </figure>
+
+  <figure id="triagem">
+    <figcaption>2 · Antes da conversa</figcaption>
+    <div class="phone">
+      <div class="top" style="padding-bottom:8px">
+        <a class="icon-btn" href="#loja" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C2321" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+        <span class="title">Fale com o farmacêutico</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;padding:12px 16px;flex:1">
+        <div><div style="font-size:22px;font-weight:700;line-height:1.25;margin-bottom:6px">Sobre o que é sua dúvida?</div><div class="sub" style="font-size:14px;line-height:1.4">Assim o farmacêutico já chega na conversa sabendo do que se trata.</div></div>
+        <div id="topics" style="display:flex;flex-direction:column;gap:8px"></div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <label for="meds" style="font-size:14px;font-weight:600">Medicamentos que você já usa <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+          <input type="text" id="meds" placeholder="Ex.: losartana 50 mg">
+        </div>
+        <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.4;color:#2E3A36">
+          <input type="checkbox" checked style="width:20px;height:20px;margin:0;accent-color:var(--teal);flex-shrink:0">
+          Autorizo compartilhar estas informações com o farmacêutico da loja, só para esta conversa (LGPD).
+        </label>
+        <div style="display:flex;gap:10px;padding:12px;border-radius:12px;background:#FDF3E7">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <span style="font-size:13px;line-height:1.4;color:#7A3A06">Sintomas graves ou emergência? Ligue 192 (SAMU). O chat é para orientação farmacêutica.</span>
+        </div>
+      </div>
+      <div style="padding:12px 16px 24px;border-top:1px solid var(--line)"><a class="btn" href="#chat" style="height:52px;font-size:16px">Iniciar conversa</a></div>
+    </div>
+  </figure>
+
+  <figure id="chat">
+    <figcaption>3 · Chat com o farmacêutico</figcaption>
+    <div class="phone" style="background:#F5F7F6">
+      <div class="top" style="background:#fff;border-bottom:1px solid var(--line)">
+        <a class="icon-btn" href="#loja" aria-label="Voltar para a loja"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C2321" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+        <div style="width:44px;height:44px;border-radius:22px;background:var(--teal-s);color:var(--teal-d);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0">FR</div>
+        <div><div style="font-size:15px;font-weight:700">[Nome] · Farmacêutica responsável</div><div class="sub" style="font-size:12px">CRF-RS [nº] · Farmácia Bem Viver</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:16px;flex:1">
+        <div style="align-self:center;display:flex;gap:8px;max-width:320px;padding:10px 12px;border-radius:12px;background:#fff;border:1px dashed #B9D9D4;font-size:12px;line-height:1.4;color:#2E3A36">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg>
+          <span>Resumo enviado ao farmacêutico: interação entre medicamentos · usa losartana 50 mg</span>
+        </div>
+        <div class="bubble me">Posso tomar ibuprofeno pra dor nas costas? Tomo losartana pra pressão.</div>
+        <div class="bubble them">Boa pergunta! O ibuprofeno pode diminuir o efeito da losartana e sobrecarregar os rins, principalmente se usado por vários dias. Para dor ocasional, o paracetamol costuma ser uma opção mais segura no seu caso.</div>
+        <div class="bubble them">Você tem algum problema nos rins ou no fígado?</div>
+        <div style="align-self:flex-start;width:280px;max-width:100%;padding:12px;border-radius:16px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:12px;font-weight:600;color:var(--teal-d)">Sugestão da farmacêutica</span>
+          <div style="display:flex;gap:10px;align-items:center"><div class="thumb" style="width:52px;height:52px;border-radius:10px"></div><div><div style="font-size:14px;font-weight:600">Paracetamol 750 mg</div><div class="sub">20 comprimidos · R$ [PREÇO]</div></div></div>
+          <button class="btn" style="height:44px;background:var(--teal-s);color:var(--teal-d);font-size:14px">Adicionar à sacola</button>
+        </div>
+      </div>
+      <div style="padding:8px 16px 4px;font-size:11px;line-height:1.4;color:var(--muted);text-align:center">Orientação farmacêutica não substitui consulta médica. Medicamentos com retenção de receita exigem a receita na entrega.</div>
+      <div style="display:flex;gap:8px;align-items:center;padding:10px 16px 24px;background:#fff;border-top:1px solid var(--line)">
+        <button class="icon-btn" aria-label="Enviar foto da receita ou embalagem"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C2321" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></button>
+        <label for="msg" style="position:absolute;left:-9999px">Mensagem</label>
+        <input type="text" id="msg" placeholder="Escreva sua dúvida" style="flex:1;min-width:0;border-radius:22px">
+        <button class="icon-btn" style="background:var(--teal)" aria-label="Enviar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </figure>
+</main>
+<footer>Conceito de produto por Luiza Miller · protótipo de interface, sem vínculo com nenhuma empresa</footer>
+
+<script>
+  const topics = ['Interação entre medicamentos','Como usar / horários','Efeitos colaterais','Ajuda para escolher um produto','Receita e documentação'];
+  const box = document.getElementById('topics');
+  const check = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
+  topics.forEach((t, i) => {
+    const b = document.createElement('button');
+    b.className = 'topic'; b.type = 'button';
+    b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+    b.innerHTML = '<span>' + t + '</span>' + check;
+    b.onclick = () => box.querySelectorAll('.topic').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    box.appendChild(b);
+  });
+</script>
+</body>
+</html>
