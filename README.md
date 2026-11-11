@@ -4,7 +4,7 @@ Conceito de funcionalidade para **farmácias em apps de delivery**: um canal par
 
 > Protótipo de interface (UX/produto) — não é um produto oficial nem tem vínculo com nenhuma empresa.
 
-**▶️ Ver o protótipo:** abra o [`index.html`](index.html) no navegador ou acesse a versão publicada no GitHub Pages.
+**▶️ [Ver o protótipo no ar](https://luizamiller.github.io/fale-com-farmaceutico/)** (GitHub Pages) — ou abra o [`index.html`](index.html) no navegador.
 
 ---
 
